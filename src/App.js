@@ -8,17 +8,14 @@ function App() {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [error, setError] = useState("");
 
-  // Replace with your deployed backend URL
   const backendURL = "https://bajaj-backend-7fyu.onrender.com/bfhl";
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setResponse(null);
     setSelectedOptions([]);
 
-    // Validate JSON input
     let parsedData;
     try {
       parsedData = JSON.parse(jsonInput);
@@ -40,7 +37,6 @@ function App() {
     }
   };
 
-  // Handle checkbox changes
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     if (checked) {
@@ -50,7 +46,6 @@ function App() {
     }
   };
 
-  // Render the filtered response
   const renderFilteredResponse = () => {
     if (!response) return null;
 
